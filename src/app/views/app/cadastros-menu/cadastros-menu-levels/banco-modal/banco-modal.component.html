@@ -1,0 +1,36 @@
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{'pages.add-new-modal-title' | translate}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+      <div class="mt-4" hidden>
+        <div>
+          <label>ID</label>
+          <input type="number" class="form-control" placeholder="">
+        </div>
+      </div>
+      <h6 class="mb-4">Cadastro de Banco</h6>
+      <form [formGroup]="formulario" #form="ngForm" (ngSubmit)="onSubmit()" novalidate class="tooltip-label-right">
+        <div class="form-group">
+          <label>Código</label>
+          <input type="text" class="form-control" name="codigo" formControlName="codigo">
+          <div *ngIf="formulario.get('codigo')?.errors?.required && form.submitted" class="invalid-tooltip">Preenchimento Necessário!</div>
+        </div>
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" class="form-control" name="nome" formControlName="nome">
+          <div *ngIf="formulario.get('nome')?.errors?.required && form.submitted" class="invalid-tooltip">Preenchimento Necessário!</div>
+        </div>
+        <div class="form-group">
+          <label>URL</label>
+          <input type="text" class="form-control" name="url" formControlName="url">
+          <div *ngIf="formulario.get('url')?.errors?.required && form.submitted" class="invalid-tooltip">Preenchimento Necessário!</div>
+        </div>
+        <button type="button" class="btn btn-outline-primary" (click)="modalRef.hide()">{{'pages.cancel' | translate }}</button>
+        <button type="submit" class="btn btn-primary float-right" (click)="modalRef.hide()">{{ 'pages.submit' | translate}}</button>
+      </form>
+    </div>
+</ng-template>
