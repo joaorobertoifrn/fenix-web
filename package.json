@@ -4,9 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "preinstall": "npm install @angular/cli express --save",
-    "postinstall": "ng build --aot --prod",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -58,7 +56,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.1",
-    "@angular/cli": "^9.0.7",
+    "@angular/cli": "^9.1.12",
     "@angular/compiler-cli": "~9.0.0",
     "@angular/language-service": "~9.0.0",
     "@types/jasmine": "~3.3.8",
@@ -78,7 +76,7 @@
     "typescript": "~3.7.5"
   },
   "engines": {
-    "node": "12.16.2",
-    "npm": "6.14.4"
+    "node": "12.18.3",
+    "npm": "6.14.8"
   }
 }
